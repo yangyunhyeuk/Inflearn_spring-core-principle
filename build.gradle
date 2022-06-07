@@ -8,12 +8,32 @@ group = 'hello'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
+//lombok
+configurations {
+	complieOnly {
+		extendsFrom annotationProcessor
+	}
+}
+//lombok
+
 repositories {
 	mavenCentral()
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'javax.inject:javax.inject:1'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	// lombok liburary
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
+	testCompileOnly 'org.projectlombok:lombok'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+	// lombok liburary
+
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
